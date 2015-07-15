@@ -4,7 +4,7 @@
   "mem": 512,
   "disk": 100,
   "instances": 1,
-  "cmd": "export PATH=$PATH:$MESOS_DIRECTORY/jre1.7.0_76/bin:$MESOS_DIRECTORY/hdfs-mesos-0.1.1/bin && env && which java && which hadoop && {{#hdfs.custom-config}}echo {{hdfs.custom-config}} | base64 --decode > mesos-site.xml && {{/hdfs.custom-config}}cd hdfs-mesos* && if [ -e '../mesos-site.xml' ]; then cp -f ../mesos-site.xml ./etc/hadoop/; fi && ./bin/hdfs-mesos",
+  "cmd": "export PATH=$PATH:$MESOS_DIRECTORY/jre1.7.0_76/bin:$MESOS_DIRECTORY/hdfs-mesos-0.1.1/bin && env && which java && which hadoop && ls -l /opt/mesosphere/packages/mesos--5613d5dfa1e8f583882238dd5003b7b537a4249d/lib/ && {{#hdfs.custom-config}}echo {{hdfs.custom-config}} | base64 --decode > mesos-site.xml && {{/hdfs.custom-config}}cd hdfs-mesos* && if [ -e '../mesos-site.xml' ]; then cp -f ../mesos-site.xml ./etc/hadoop/; fi && ./bin/hdfs-mesos",
   "uris": {{{hdfs.scheduler-uris}}},
   "healthChecks": [
     {
